@@ -5,11 +5,11 @@
     <RootNamespace>Xanadu</RootNamespace>
     <Authors>Takahiro Hanada</Authors>
     <Copyright>© 2020 Takahiro Hanada</Copyright>
-    <PackageProjectUrl>http://github.com/takahiro-hanada/xanadu.reactive-modeling-kit</PackageProjectUrl>
+    <PackageProjectUrl>http://github.com/takahiro-hanada/xanadu.reactive-modeling-extensions</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <SignAssembly>false</SignAssembly>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <PackageTags>rx, reactive, mvvm</PackageTags>
   </PropertyGroup>
 
