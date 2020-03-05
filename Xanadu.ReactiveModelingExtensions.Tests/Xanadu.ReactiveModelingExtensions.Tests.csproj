@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Xanadu.ReactiveModelingKit\Xanadu.ReactiveModelingKit.csproj" />
+    <ProjectReference Include="..\Xanadu.ReactiveModelingExtensions\Xanadu.ReactiveModelingExtensions.csproj" />
   </ItemGroup>
 
 </Project>
