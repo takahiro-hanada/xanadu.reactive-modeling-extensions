@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <RootNamespace>Xanadu</RootNamespace>
+    <Authors>Takahiro Hanada</Authors>
+    <Copyright>© 2020 Takahiro Hanada</Copyright>
+    <PackageProjectUrl>http://github.com/takahiro-hanada/xanadu.reactive-modeling-kit</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <SignAssembly>false</SignAssembly>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>
