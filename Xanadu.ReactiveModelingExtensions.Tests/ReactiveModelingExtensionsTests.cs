@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Reactive.Linq;
 using Xunit;
 
@@ -116,6 +117,54 @@ namespace Xanadu
             Assert.Equal(CollectionChangedReactiveAction.Replace, argsList[4].Action);
             Assert.Equal(CollectionChangedReactiveAction.Remove, argsList[5].Action);
             Assert.Equal(CollectionChangedReactiveAction.Remove, argsList[6].Action);
+        }
+
+        [Fact]
+        public void ObserveCollectionChangedReactiveTestForBindingLIst()
+        {
+            const string value1 = "1";
+            const string value2 = "2";
+            const string value3 = "3";
+            const string value4 = "4";
+
+            var values = new BindingList<string>();
+
+            var argsList = new List<CollectionChangedReactiveArgs<string>>();
+
+            values
+                .ObserveCollectionChangedReactive()
+                .Subscribe(argsList.Add);
+
+            values.Add(value1);
+            values.Add(value2);
+            values[1] = value3;
+            values.Remove(value3);
+            values.Add(value4);
+            values.Clear();
+
+            Assert.Equal(7, argsList.Count);
+
+            Assert.Equal(CollectionChangedReactiveAction.Insert, argsList[0].Action);
+            Assert.Equal(value1, argsList[0].NewItem);
+
+            Assert.Equal(CollectionChangedReactiveAction.Insert, argsList[1].Action);
+            Assert.Equal(value2, argsList[1].NewItem);
+
+            Assert.Equal(CollectionChangedReactiveAction.Replace, argsList[2].Action);
+            Assert.Equal(value2, argsList[2].OldItem);
+            Assert.Equal(value3, argsList[2].NewItem);
+
+            Assert.Equal(CollectionChangedReactiveAction.Remove, argsList[3].Action);
+            Assert.Equal(value3, argsList[3].OldItem);
+
+            Assert.Equal(CollectionChangedReactiveAction.Insert, argsList[4].Action);
+            Assert.Equal(value4, argsList[4].NewItem);
+
+            Assert.Equal(CollectionChangedReactiveAction.Remove, argsList[5].Action);
+            Assert.Equal(value4, argsList[5].OldItem);
+
+            Assert.Equal(CollectionChangedReactiveAction.Remove, argsList[6].Action);
+            Assert.Equal(value1, argsList[6].OldItem);
         }
     }
 }
