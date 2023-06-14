@@ -7,11 +7,12 @@
     <Copyright>© 2020 Takahiro Hanada</Copyright>
     <PackageProjectUrl>http://github.com/takahiro-hanada/xanadu.reactive-modeling-extensions</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>True</SignAssembly>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>3.1.0</Version>
     <PackageTags>rx, reactive, mvvm</PackageTags>
     <AssemblyVersion>3.1.0.0</AssemblyVersion>
+    <AssemblyOriginatorKeyFile>..\xanadu.reactive-modeling-extensions.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
